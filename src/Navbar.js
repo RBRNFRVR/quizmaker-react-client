@@ -4,10 +4,10 @@ import LoginForm from './LoginForm'
 class Navbar extends Component {
     render(){
         return(
-            <h1>NavBar Here!!</h1>,
-            <button>Log In</button>,
-            <LoginForm />
-
+            <div>
+                <h1>NavBar Here!!</h1>
+                <LoginForm />
+            </div>
         )
     }
 

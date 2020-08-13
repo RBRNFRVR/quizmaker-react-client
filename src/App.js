@@ -5,12 +5,19 @@ import QuizContainer from './QuizContainer'
 import QuizMaker from './Quizmaker'
 
 class App extends Component{
+  state={
+    Quiz: []
+  }
+  componentDidMount(){
+ fetch()
+  }
+
   render(){
     return(
-      <h1 className="quiz-title">QuizMaker Project</h1>,
       <div>
-        <Navbar />,
-        <QuizContainer />.
+        <h1 className="quiz-title">QuizMaker Project</h1>
+        <Navbar />
+        <QuizContainer />
         <QuizMaker />
       </div>
       
