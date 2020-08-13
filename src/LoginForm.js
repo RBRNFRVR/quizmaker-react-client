@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 class LoginForm extends Component{
     handleClick = (event) =>{
+        event.preventDefault()
         console.log('working')
     }
     
