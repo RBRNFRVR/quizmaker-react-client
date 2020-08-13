@@ -3,7 +3,7 @@ import React from 'react'
 function Quiz() {
   return(
      <div>
-         <h1>What happened</h1>
+         <h1>Within Quiz Container</h1>
     </div>
     )
     

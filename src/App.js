@@ -8,9 +8,9 @@ class App extends Component{
   state={
     Quiz: []
   }
-  componentDidMount(){
- fetch()
-  }
+//   componentDidMount(){
+//  fetch()
+//   }
 
   render(){
     return(
