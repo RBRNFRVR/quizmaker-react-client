@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import LoginForm from './LoginForm'
+import styles from  './mystyle.module.css'
+import { Link, Switch} from "react-router-dom";
 
 class Navbar extends Component {
     handleClick = (event) => {
@@ -7,10 +8,12 @@ class Navbar extends Component {
     }
     render(){
         return(
-            <div>
-                <button onClick={this.handleClick} type="button">Profile</button>
-                <h1>NavBar Here!!</h1>
-                <LoginForm />
+            <div className={styles.NavbarFlex}>
+                
+                <Link to='/profile'>Profile</Link>
+                <Link to='/quizmaker'>Quizmaker</Link>
+                <Link to='/quiztaker'>Quiztaker</Link>
+                <Link to='/loginform'>Login</Link>
             </div>
         )
     }

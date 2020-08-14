@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-class Quizmaker extends Component {
+class Profile extends Component{
     render(){
         return(
             <div>
-                <h1>Quizmaker Container</h1>
+                <h1>My Profile</h1>
             </div>
         )
     }
 }
-export default Quizmaker
+export default Profile
