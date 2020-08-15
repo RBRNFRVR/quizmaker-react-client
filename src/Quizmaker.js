@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import QuestionCard from './QuestionCard'
 import Dropdown from './Dropdown'
-
-
-
+import styles from './mystyle.module.css'
 
 class Quizmaker extends Component {
 
@@ -29,7 +27,7 @@ class Quizmaker extends Component {
     render(){
         
         return(
-            <div>
+            <div className={styles.QuizmakerContainer}>
                 <h1>Quizmaker Container</h1>
                 { this.state.nextClicked ? <h3>{this.state.quizName}</h3> :
                 <form onSubmit={this.createNewQuiz}>
@@ -38,9 +36,11 @@ class Quizmaker extends Component {
                     <input type="submit" value="Next"></input>
                 </form>
                 }
-                { ( this.state.nextClicked ? <Dropdown getQuestions={this.props.getQuestions}/> : null )}
-                { (this.props.questions === "" ? null : this.props.questions.map(obj => <QuestionCard quizName={this.state.quizName} obj={obj}/>) ) }
                 
+                { ( this.state.nextClicked ? <Dropdown getQuestions={this.props.getQuestions}/> : null )}
+                <div className={styles.QuizmakerQuestionsDisplay}>
+                { (this.props.questions === "" ? null : this.props.questions.map(obj => <QuestionCard quizName={this.state.quizName} obj={obj}/>) ) }
+                </div>
             </div>
         )
     }

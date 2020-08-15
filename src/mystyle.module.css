@@ -27,15 +27,6 @@
   .App-link {
     color: #61dafb;
   }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
 
   .NavbarFlex{
       align-items: flex-start;
@@ -45,3 +36,32 @@
   .ProfileButton{
       padding: 10px 24px;
   }
+
+  .QuizApp{
+      padding: 20px 100px;
+  }
+  .QuizmakerContainer{
+      background-color: pink;
+      
+  }
+  .QuizmakerQuestionsDisplay{
+      background-color: red;
+      display:grid;
+      /* grid-template-columns: auto auto; */
+      grid-template-columns: repeat(2,618px);
+      grid-template-rows: repeat(5,350px);
+      grid-column-gap: 5px;
+        grid-row-gap: 5px;
+
+  }
+  .QuestionCard{
+      
+      border-style: solid;
+      border-color: black;
+      border-width: 4px;
+      padding: 25px;
+    
+}
+.Questions{
+    background-color: white;
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './mystyle.module.css'
 
 class QuestionCard extends React.Component{
 
@@ -80,7 +81,7 @@ class QuestionCard extends React.Component{
         let level = this.props.obj.difficulty
         
         return(
-            <div>
+            <div className={styles.QuestionCard}>
                 <h3>Question</h3>
                 <p>Category: {this.props.obj.category}</p>
                 <p>Difficulty: {this.capitalize(level)}</p>
