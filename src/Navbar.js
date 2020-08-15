@@ -11,7 +11,7 @@ class Navbar extends Component {
             <div className={styles.NavbarFlex}>
                 
                 <Link to='/profile'>Profile</Link>
-                <Link to='/quizmaker'>Quizmaker</Link>
+                <Link to='/quizmaker' onClick={this.props.qmClicked}>Quizmaker</Link>
                 <Link to='/quiztaker'>Quiztaker</Link>
                 <Link to='/loginform'>Login</Link>
             </div>

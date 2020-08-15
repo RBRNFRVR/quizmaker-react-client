@@ -7,27 +7,36 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Profile from './Profile';
 import LoginForm from './LoginForm';
 
-const url = "https://opentdb.com/api.php?amount=10"
 
 class App extends Component{
   state={
-    questions: []
+    questions: ""
   }
 
-  componentDidMount(){
-    fetch(url)
-    .then(rep => rep.json())
-    .then(data => this.setState({ questions: data["results"]}))
-}
+
+  getQuestions = (num, diff) =>{
+    let newUrl = `https://opentdb.com/api.php?amount=10&category=${num}&difficulty=${diff}`
+    
+    fetch(newUrl)
+    .then(resp => resp.json())
+    .then(data => this.setState({questions: data.results}))
+  }
+
+  qmClicked = () => {
+    this.setState({questions: "" })
+  }
+
+ 
+
 
   render(){
     return(
       <Router>
       <div>
         <h1 className={styles.Appheader}>QuizMaker Project</h1>
-        <Navbar />
-        <Route exact path ='/quiztaker' component ={QuizContainer} />
-        <Route exact path = '/quizmaker' render={() => <QuizMaker questions={this.state.questions}/>} />
+        <Navbar qmClicked={this.qmClicked}/>
+        <Route exact path ='/quiztaker' component={QuizContainer} />
+        <Route exact path = '/quizmaker' render={() => <QuizMaker questions={this.state.questions} getQuestions={this.getQuestions}/>} />
         <Route exact path='/profile' component={Profile}/>
         <Route exact path='/loginform' component={LoginForm}/>
       </div>
