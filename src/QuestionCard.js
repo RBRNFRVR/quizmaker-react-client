@@ -3,10 +3,14 @@ import React from 'react'
 class QuestionCard extends React.Component{
 
     state = {
-        quizName: this.props.quizName
+        quizName: this.props.quizName,
+        buttonClicked: false,
+        questionID: "",
+        quizID: ""
     }
     
     addToQuiz = () => {
+        this.setState({buttonClicked: true})
         let questionObj = this.props.obj
         
         fetch("http://localhost:3000/questions", {
@@ -24,7 +28,8 @@ class QuestionCard extends React.Component{
             })
         })
         .then(resp => resp.json())
-        .then(data => {
+        .then(data => { 
+            this.setState({questionID: data.id})
             fetch("http://localhost:3000/quizzes", {
                 method: "POST",
                 headers: {
@@ -38,10 +43,36 @@ class QuestionCard extends React.Component{
                 })
             })
             .then(resp => resp.json())
-            .then(data => console.log("new quiz", data))
+            .then(data => this.setState({quizID: data.id }, () => console.log("this.state.quizID", this.state.quizID)))
         })
         
     }
+
+    removeFromQuiz =() => {
+        this.setState({buttonClicked: false})
+            fetch(`http://localhost:3000/quizzes/${this.state.quizID}`, {
+                method: "DELETE",
+                headers: {
+                  "content-type":"application/json",
+                  Accept: "application/json"
+                }
+              })
+            .then(resp => resp.json())
+            .then(data => console.log("quiz deleted!"))
+
+            // .then(data => {
+            //     fetch(`http://localhost:3000/questions/${this.state.questionID}`, {
+            //         method: "DELETE",
+            //         headers: {
+            //             "content-type":"application/json",
+            //             Accept: "application/json"
+            //         }
+            //     })
+            //     this.setState({questionID:""})
+            //     this.setState({quizID:""})
+            // })
+    }
+    
     
     capitalize = (str) => {
         return str.charAt(0).toUpperCase() + str.slice(1)
@@ -58,7 +89,7 @@ class QuestionCard extends React.Component{
                 <p>Question: {this.props.obj.question}</p>
                 <p>Correct Answer: {this.props.obj.correct_answer}</p>
                 <p>Incorrect Answers: {this.props.obj.incorrect_answers.join(", ")}</p>
-                <button onClick={this.addToQuiz}>Add to Quiz</button>
+                {this.state.buttonClicked ? <button onClick={this.removeFromQuiz}>Remove</button>:<button onClick={this.addToQuiz}>Add to Quiz</button>}
             </div>
         )
     }
