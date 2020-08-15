@@ -24,7 +24,7 @@ class QuestionCard extends React.Component{
                 difficulty: questionObj.difficulty,
                 question: questionObj.question,
                 correct_answer: questionObj.correct_answer,
-                incorrect_answers: questionObj.incorrect_answers
+                incorrect_answers: questionObj.incorrect_answers.join(", ")
             })
         })
         .then(resp => resp.json())
@@ -56,22 +56,24 @@ class QuestionCard extends React.Component{
                   "content-type":"application/json",
                   Accept: "application/json"
                 }
-              })
-            .then(resp => resp.json())
-            .then(data => console.log("quiz deleted!"))
-
-            // .then(data => {
-            //     fetch(`http://localhost:3000/questions/${this.state.questionID}`, {
-            //         method: "DELETE",
-            //         headers: {
-            //             "content-type":"application/json",
-            //             Accept: "application/json"
-            //         }
-            //     })
-            //     this.setState({questionID:""})
-            //     this.setState({quizID:""})
-            // })
+            })
+        this.setState({quizID:""})
+        this.deleteQuestion()
     }
+
+    deleteQuestion =() => {
+
+        fetch(`http://localhost:3000/questions/${this.state.questionID}`, {
+            method: "DELETE",
+            headers: {
+                "content-type":"application/json",
+                Accept: "application/json"
+            }
+        })
+        this.setState({questionID:""})
+    }        
+        
+    
     
     
     capitalize = (str) => {
