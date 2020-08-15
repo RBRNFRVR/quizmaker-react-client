@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import QuestionCard from './QuestionCard'
 
 class Profile extends Component{
 
     state = {
         info: "",
-        quizNames: ""
+        quizNames: "",
+        quizArray: "",
+        filteredQuestions :"",
+        quizName: ""
     }
 
     componentDidMount(){
@@ -12,7 +16,12 @@ class Profile extends Component{
     
         fetch(newUrl)
         .then(resp => resp.json())
-        .then(data => this.setState({info:data}))
+        .then(data => {this.setState({info:data}) 
+        
+            fetch("http://localhost:3000/quizzes")
+            .then(resp => resp.json())
+            .then(data => this.setState({quizArray: data}) )
+        }) 
     }
 
     componentDidUpdate(prevProp, prevState) {
@@ -23,13 +32,25 @@ class Profile extends Component{
         } 
     }
 
+    clickedQuiz = (name) => {
+        this.setState({quizName: name})
+        let array = this.state.quizArray
+        let filteredArray = array.filter(obj => obj.name === name)
+        let questions = filteredArray.map(obj => obj.question)
+        this.setState({ filteredQuestions : questions })
+    }
+
     render(){
         return(
             <div>
                 <h1>My Profile</h1>
                 <h2>Username: {this.state.info.username}</h2>
                 <p>My Quizzes:</p>
-                    <ul>{(this.state.quizNames === "" ? null : this.state.quizNames.map(obj => <li>{obj}</li>))}</ul> 
+                    <ul>{(this.state.quizNames === "" ? null : this.state.quizNames.map(obj => <li onClick={() => this.clickedQuiz(obj)}>{obj}</li>))}</ul> 
+                <div>
+                    <h3>Quiz Rendered:</h3>
+                    {/* { (this.state.filteredQuestions === "" ? null : this.state.filteredQuestions.map(obj => <QuestionCard quizName={this.state.quizName} obj={obj}/>) ) } */}
+                </div>    
             </div>
         )
     }

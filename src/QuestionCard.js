@@ -44,8 +44,7 @@ class QuestionCard extends React.Component{
             })
             .then(resp => resp.json())
             .then(data => this.setState({quizID: data.id }, () => console.log("this.state.quizID", this.state.quizID)))
-        })
-        
+        }) 
     }
 
     removeFromQuiz =() => {
@@ -73,9 +72,6 @@ class QuestionCard extends React.Component{
         this.setState({questionID:""})
     }        
         
-    
-    
-    
     capitalize = (str) => {
         return str.charAt(0).toUpperCase() + str.slice(1)
     }
