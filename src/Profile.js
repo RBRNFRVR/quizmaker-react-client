@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import QuestionCard from './QuestionCard'
+import QuizQuestions from './QuizQuestions'
 
 class Profile extends Component{
 
@@ -49,7 +49,7 @@ class Profile extends Component{
                     <ul>{(this.state.quizNames === "" ? null : this.state.quizNames.map(obj => <li onClick={() => this.clickedQuiz(obj)}>{obj}</li>))}</ul> 
                 <div>
                     <h3>Quiz Rendered:</h3>
-                    {/* { (this.state.filteredQuestions === "" ? null : this.state.filteredQuestions.map(obj => <QuestionCard quizName={this.state.quizName} obj={obj}/>) ) } */}
+                    { (this.state.filteredQuestions === "" ? null : this.state.filteredQuestions.map(obj => <QuizQuestions obj={obj}/>) ) }
                 </div>    
             </div>
         )
