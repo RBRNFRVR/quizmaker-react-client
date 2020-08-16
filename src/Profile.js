@@ -8,7 +8,9 @@ class Profile extends Component{
         quizNames: "",
         quizArray: "",
         filteredQuestions :"",
-        quizName: ""
+        quizName: "",
+        quizClicked: false,
+        hideButton: true
     }
 
     componentDidMount(){
@@ -37,10 +39,11 @@ class Profile extends Component{
         let array = this.state.quizArray
         let filteredArray = array.filter(obj => obj.name === name)
         let questions = filteredArray.map(obj => obj.question)
-        this.setState({ filteredQuestions : questions })
+        this.setState({ filteredQuestions : questions, quizClicked: true, hideButton: false })
     }
 
     render(){
+        let counter = 0
         return(
             <div>
                 <h1>My Profile</h1>
@@ -48,8 +51,12 @@ class Profile extends Component{
                 <p>My Quizzes:</p>
                     <ul>{(this.state.quizNames === "" ? null : this.state.quizNames.map(obj => <li onClick={() => this.clickedQuiz(obj)}>{obj}</li>))}</ul> 
                 <div>
-                    <h3>Quiz Rendered:</h3>
-                    { (this.state.filteredQuestions === "" ? null : this.state.filteredQuestions.map(obj => <QuizQuestions obj={obj}/>) ) }
+                    { (!this.state.quizClicked ? <h4>Select a quiz from "My Quizzes" to view more details</h4> : <div> <h3>{this.state.quizName}</h3><button>Delete Quiz</button></div>)}  
+                    { (this.state.filteredQuestions === "" ? null : this.state.filteredQuestions.map(obj =>  {
+                    counter += 1
+                    return <QuizQuestions count={counter} obj={obj}/>;
+                    }
+                    ) ) }
                 </div>    
             </div>
         )

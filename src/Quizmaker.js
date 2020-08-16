@@ -25,6 +25,7 @@ class Quizmaker extends Component {
     }
   
     render(){
+        let counter = 0
         
         return(
             <div className={styles.QuizmakerContainer}>
@@ -39,7 +40,10 @@ class Quizmaker extends Component {
                 
                 { ( this.state.nextClicked ? <Dropdown getQuestions={this.props.getQuestions}/> : null )}
                 <div className={styles.QuizmakerQuestionsDisplay}>
-                { (this.props.questions === "" ? null : this.props.questions.map(obj => <QuestionCard quizName={this.state.quizName} obj={obj}/>) ) }
+            { (this.props.questions === "" ? null : this.props.questions.map(obj => {
+            counter += 1
+            return <QuestionCard count={counter} quizName={this.state.quizName} obj={obj}/>
+            }) ) }
                 </div>
             </div>
         )

@@ -11,7 +11,7 @@ class QuizQuestions extends React.Component {
         
         return(
             <div className={styles.Questions}>
-                <h3>Question</h3>
+                <h3>Question #{this.props.count}</h3>
                 <p>Category: {this.props.obj.category}</p>
                 <p>Difficulty: {this.capitalize(level)}</p>
                 <p>Question: {this.props.obj.question}</p>
