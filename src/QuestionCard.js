@@ -97,10 +97,7 @@ class QuestionCard extends React.Component{
 
     render(){
         let level = this.props.obj.difficulty
-        let entities = {
-            '&#039;': "'",
-            '&quot;': '"'
-        }
+     
         
         return(
             <div className={styles.QuestionCard}>

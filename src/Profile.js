@@ -28,7 +28,7 @@ class Profile extends Component{
     }
 
     componentDidUpdate(prevProp, prevState) {
-        if (prevState.info !== this.state.info){
+        if (prevState.info.quizzes !== this.state.info.quizzes){
             let quizArray = this.state.info.quizzes.map(obj => obj.name)
             let newArray = [...new Set(quizArray)]
             this.setState({quizNames: newArray})
@@ -42,6 +42,35 @@ class Profile extends Component{
         let questions = filteredArray.map(obj => obj.question)
         this.setState({ filteredQuestions : questions, quizClicked: true, hideButton: false })
     }
+
+    deleteQuiz = () => {
+        let quizArray = this.state.quizArray
+        let allNamedQ = quizArray.filter(obj => obj.name === this.state.quizName)
+
+        allNamedQ.forEach(quiz => {
+            fetch(`http://localhost:3000/quizzes/${quiz.id}`, {
+                method: "DELETE",
+                headers: {
+                    "content-type":"application/json",
+                    Accept: "application/json"
+                }
+            })
+            .then(resp => resp.text())
+            .then(data => {
+                let newUrl = `http://localhost:3000/users/1`
+    
+                fetch(newUrl)
+                .then(resp => resp.json())
+                .then(data => this.setState({info:data}))
+
+                this.setState({quizClicked: false})
+                this.setState({filteredQuestions: ""})
+                this.setState({quizName: ""})
+             }) 
+
+        })
+    }
+    
 
     render(){
         let counter = 0
