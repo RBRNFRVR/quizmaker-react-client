@@ -14,7 +14,7 @@ class Navbar extends Component {
     }
     handleonMouseEnter =(event) => {
        this.state.hover === true? this.setState({hover:false}):this.setState({hover:true})
-       
+
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -29,25 +29,25 @@ class Navbar extends Component {
             <div className={styles.NavbarFlex}>
                 { this.state.userLogged ?
                     <>
-                    <div className={styles.buttonlink}>
-                    <Link to='/profile' onMouseEnter={this.handleonMouseEnter}>Profile</Link>
+                    <div className={styles.leftthree}>
+                        <div className={styles.buttonlink}>
+                        <Link to='/profile' onMouseEnter={this.handleonMouseEnter} className={styles.linkstyle}>Profile</Link>
+                        </div>
+                        <div className={styles.buttonlink}>
+                        <Link to='/quizmaker' onClick={this.props.qmClicked} onMouseEnter={this.handleonMouseEnter} className={styles.linkstyle}>Quizmaker</Link>
+                        </div>
+                        <div className={styles.buttonlink}>
+                        <Link to='/quiztaker' onMouseEnter={this.handleonMouseEnter} className={styles.linkstyle}>Quiztaker</Link>
+                        </div>
                     </div>
                     <div className={styles.buttonlink}>
-                    <Link to='/quizmaker' onClick={this.props.qmClicked} onMouseEnter={this.handleonMouseEnter}>Quizmaker</Link>
-                    </div>
-                    <div className={styles.buttonlink}>
-                    <Link to='/quiztaker'onMouseEnter={this.handleonMouseEnter}>Quiztaker</Link>
-                    </div>
-                    <div className={styles.buttonlink}>
-                    <Link to='/login' onClick={this.props.logOut} onMouseEnter={this.handleonMouseEnter}>Log Out</Link>
+                    <Link to='/login' onClick={this.props.logOut} className={styles.loginlinkstyle} onMouseEnter={this.handleonMouseEnter}>Log Out</Link>
                     </div>
                     </>
                 :
                 null 
                 }
-                     {/* <div className={styles.buttonlink}>
-                { !this.state.userLogged ? <Link to='/login' onMouseEnter={this.handleonMouseEnter}>Login</Link> : <Link to='/login' onClick={this.props.logOut} onMouseEnter={this.handleonMouseEnter}>Log Out</Link> }
-                </div> */}
+                     
             </div>
         )
     }

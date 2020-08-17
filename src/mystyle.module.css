@@ -14,14 +14,13 @@
   }
   
   .Appheader {
-    background-color: #282c34;
     min-height: 2vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
+    color: black;
   }
   
   .App-link {
@@ -29,10 +28,13 @@
   }
 
   .NavbarFlex{
+        background-color:black;
+        height: 30px;
       align-items: flex-start;
       display: flex;
-      justify-content: space-between;
-      text-decoration-color: black;
+      width: 90vw;
+      justify-content: space-between; 
+      text-emphasis-color: white;
   }
   .ProfileButton{
       padding: 10px 24px;
@@ -41,7 +43,7 @@
   .QuizApp{
       padding: 20px 100px;
       /* background-image: url('pexels-eberhard-grossgasteiger-2310713.jpg'); */
-      background-color: rgba(70, 158, 170, 0.418);
+      background-image: url('cool-background copy.png');
       background-attachment: fixed;    
       background-position: center;
       background-repeat: no-repeat;
@@ -75,21 +77,42 @@
     background-color: white;
 }
 .buttonlink{
-    border-radius: 25px;
-    background-color: white;
-    border: 2px solid rebeccapurple;
-    padding: 2px;
+    border: 25px;
+    background-color: black;
+    /*border: 2px solid rebeccapurple;
+    padding: 2px; */
     transform: scale(1,1);
+    font-size: 25px;
 }
 .buttonlink:hover{
     /* border-radius: 25px;
     background-color: white;
     border: 2px solid rebeccapurple; */
     /* padding: 5px;*/
-    transform: scale(1.2,1.2); 
-    
+    background-color: red;
 }
 
 .PageTitle{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.linkstyle{
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    font-weight: bold;
+    ;
+}
+/* .linkstyle :hover{
+    color: red; */
+
+
+.loginlinkstyle{
+    color: white;
+    text-decoration: none;
+    padding: 30px;
+    font-weight: bold;
+}
+.leftthree{
+    display: flex;
+    flex-direction: row;
 }
