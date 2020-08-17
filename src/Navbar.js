@@ -27,7 +27,7 @@ class Navbar extends Component {
                 <Link to='/quiztaker'onMouseEnter={this.handleonMouseEnter}>Quiztaker</Link>
                 </div>
                 <div className={styles.buttonlink}>
-                <Link to='/loginform'onMouseEnter={this.handleonMouseEnter}>Login</Link>
+                <Link to='/login'onMouseEnter={this.handleonMouseEnter}>Login</Link>
                 </div>
             </div>
         )
