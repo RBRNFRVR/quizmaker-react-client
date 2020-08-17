@@ -80,13 +80,8 @@ class Profile extends Component{
                 <h2>Username: {this.state.info.username}</h2>
                 <p>My Quizzes:</p>
                     <ul>{(this.state.quizNames === "" ? null : this.state.quizNames.map(obj => <li onClick={() => this.clickedQuiz(obj)}>{obj}</li>))}</ul> 
-<<<<<<< HEAD
-                <div>
-                    { (!this.state.quizClicked ? <h4>Select a quiz from "My Quizzes" to view more details</h4> : <div> <h3>{this.state.quizName}</h3><button onClick={this.deleteQuiz}>Delete Quiz</button></div>)}  
-=======
                 <div className={styles.QuizmakerQuestionsDisplay}>
                     { (!this.state.quizClicked ? <h4>Select a quiz from "My Quizzes" to view more details</h4> : <div> <h3>{this.state.quizName}</h3><button>Delete Quiz</button></div>)}  
->>>>>>> 79f3cd30bc504e6b54c3309c46bf64b6e8f0ebfe
                     { (this.state.filteredQuestions === "" ? null : this.state.filteredQuestions.map(obj =>  {
                     counter += 1
                     return <QuizQuestions count={counter} obj={obj}/>;
