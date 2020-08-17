@@ -45,7 +45,8 @@
       background-attachment: fixed;    
       background-position: center;
       background-repeat: no-repeat;
-      background-size: cover;   
+      background-size: cover;  
+      min-height: 100vh; 
     }
   .QuizmakerContainer{
       background-color: null;
@@ -80,12 +81,13 @@
     padding: 2px;
     transform: scale(1,1);
 }
-.buttonlink :hover{
-    border-radius: 25px;
+.buttonlink:hover{
+    /* border-radius: 25px;
     background-color: white;
-    border: 2px solid rebeccapurple;
-    padding: 5px;
-    transform: scale(1,1);
+    border: 2px solid rebeccapurple; */
+    /* padding: 5px;*/
+    transform: scale(1.2,1.2); 
+    
 }
 
 .PageTitle{
