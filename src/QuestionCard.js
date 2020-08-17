@@ -80,7 +80,8 @@ class QuestionCard extends React.Component{
     decodeText = (string) => {
         let entities = {
             '&#039;': "'",
-            '&quot;': '"'
+            '&quot;': '"',
+            '&rsquo;': "'"
         }
         let stg1 = string.replace(/&#?\w+;/, match => entities[match]).replace(/&#?\w+;/, match => entities[match])
         let stg2 = stg1.replace(/&#?\w+;/, match => entities[match]).replace(/&#?\w+;/, match => entities[match])
