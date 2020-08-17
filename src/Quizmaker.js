@@ -43,7 +43,7 @@ class Quizmaker extends Component {
                 <div className={styles.QuizmakerQuestionsDisplay}>
             { (this.props.questions === "" ? null : this.props.questions.map(obj => {
             counter += 1
-            return <QuestionCard count={counter} quizName={this.state.quizName} obj={obj}/>
+            return <QuestionCard loggedInUser={this.props.loggedInUser} count={counter} quizName={this.state.quizName} obj={obj}/>
             }) ) }
                 </div>
             </div>

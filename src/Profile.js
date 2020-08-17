@@ -11,11 +11,12 @@ class Profile extends Component{
         filteredQuestions :"",
         quizName: "",
         quizClicked: false,
-        hideButton: true
+        hideButton: true,
+        loggedInUser: this.props.loggedInUser
     }
 
     componentDidMount(){
-        let newUrl = `http://localhost:3000/users/1`
+        let newUrl = `http://localhost:3000/users/${this.state.loggedInUser.id}`
     
         fetch(newUrl)
         .then(resp => resp.json())
@@ -57,7 +58,7 @@ class Profile extends Component{
             })
             .then(resp => resp.text())
             .then(data => {
-                let newUrl = `http://localhost:3000/users/1`
+                let newUrl = `http://localhost:3000/users/${this.state.loggedInUser.id}`
     
                 fetch(newUrl)
                 .then(resp => resp.json())
@@ -74,6 +75,7 @@ class Profile extends Component{
 
     render(){
         let counter = 0
+        console.log("in profile after logged in. here is the user obj:", this.state.loggedInUser)
         return(
             <div>
                 <h1>My Profile</h1>

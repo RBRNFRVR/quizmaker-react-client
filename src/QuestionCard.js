@@ -7,7 +7,8 @@ class QuestionCard extends React.Component{
         quizName: this.props.quizName,
         buttonClicked: false,
         questionID: "",
-        quizID: ""
+        quizID: "",
+        loggedInUser: this.props.loggedInUser
     }
     
     addToQuiz = () => {
@@ -40,7 +41,7 @@ class QuestionCard extends React.Component{
                 body: JSON.stringify({
                     name: this.state.quizName,
                     question_id: data.id,
-                    user_id: 1
+                    user_id: this.state.loggedInUser.id
                 })
             })
             .then(resp => resp.json())
