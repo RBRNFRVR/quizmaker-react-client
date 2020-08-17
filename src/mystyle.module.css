@@ -32,7 +32,6 @@
         height: 30px;
       align-items: flex-start;
       display: flex;
-      width: 90vw;
       justify-content: space-between; 
       text-emphasis-color: white;
   }
@@ -89,7 +88,8 @@
     background-color: white;
     border: 2px solid rebeccapurple; */
     /* padding: 5px;*/
-    background-color: red;
+    background-color: purple;
+    cursor: pointer
 }
 
 .PageTitle{
@@ -115,4 +115,32 @@
 .leftthree{
     display: flex;
     flex-direction: row;
+}
+.Quizheader{
+    background-image: url('03dbf00e-9264-414f-9565-1b6d4de12aba_200x200 (1).png');
+}
+
+.Image{
+    /* margin-bottom: 25px; */
+    max-height: 140px;
+    margin-top: 0%;
+}
+.loginformstyle{
+    background-color: white;
+}
+input[type=text], select, text{
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+input[type=password], select, password{
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
 }

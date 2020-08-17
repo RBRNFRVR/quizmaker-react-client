@@ -6,6 +6,7 @@ import QuizMaker from './Quizmaker'
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Profile from './Profile';
 import LoginForm from './LoginForm';
+import QuizImage from './QuizImage'
 
 
 class App extends Component{
@@ -33,7 +34,7 @@ class App extends Component{
     return(
         <Router>
         <div className={styles.QuizApp}>
-        <h1 className={styles.Appheader}>QuizMaker Project</h1>
+          <QuizImage />
         <Navbar qmClicked={this.qmClicked}/>
         <Route exact path="/"><Redirect to="/login" /></Route>
         <Route exact path ='/quiztaker' component={QuizContainer} />

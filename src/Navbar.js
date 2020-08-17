@@ -29,7 +29,7 @@ class Navbar extends Component {
                 </div>
                 </div>
                 <div className={styles.buttonlink}>
-                <Link to='/loginform'onMouseEnter={this.handleonMouseEnter} className={styles.loginlinkstyle}>Login</Link>
+                <Link to='/login'onMouseEnter={this.handleonMouseEnter} className={styles.loginlinkstyle}>Login</Link>
                 </div>
             </div>
         )
