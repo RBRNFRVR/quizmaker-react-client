@@ -32,13 +32,10 @@ class App extends Component{
   render(){
     return(
         <Router>
-         
         <div className={styles.QuizApp}>
         <h1 className={styles.Appheader}>QuizMaker Project</h1>
         <Navbar qmClicked={this.qmClicked}/>
-        <Route exact path="/">
-            <Redirect to="/login" />
-        </Route>
+        <Route exact path="/"><Redirect to="/login" /></Route>
         <Route exact path ='/quiztaker' component={QuizContainer} />
         <Route exact path = '/quizmaker' render={() => <QuizMaker questions={this.state.questions} getQuestions={this.getQuestions}/>} />
         <Route exact path='/profile' component={Profile}/>
