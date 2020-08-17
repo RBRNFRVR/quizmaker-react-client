@@ -30,7 +30,6 @@ class App extends Component{
   }
 
   setLoggedInUser = (userObj) => {
-    console.log("logged in user:", userObj)
     this.setState({loggedInUser: userObj})
     this.setState({userLogged: userObj.username})
     this.setState({loggedInUsername: userObj.username})

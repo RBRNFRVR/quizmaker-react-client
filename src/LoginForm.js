@@ -36,7 +36,7 @@ class LoginForm extends Component{
         this.setState({unType: e.target.value})
     }
     pwType = (e) => {
-        this.setState({pwType: e.target.value}, () => console.log( this.state.pwType))
+        this.setState({pwType: e.target.value})
     }
     
     render(){ 
