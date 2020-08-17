@@ -41,7 +41,7 @@
   .QuizApp{
       padding: 20px 100px;
       /* background-image: url('pexels-eberhard-grossgasteiger-2310713.jpg'); */
-      background-color: pink;
+      background-color: green;
       background-attachment: fixed;    
       background-position: center;
       background-repeat: no-repeat;
@@ -82,7 +82,7 @@
 }
 .buttonlink :hover{
     border-radius: 25px;
-    background-color: red;
+    background-color: white;
     border: 2px solid rebeccapurple;
     padding: 5px;
     transform: scale(1,1);
