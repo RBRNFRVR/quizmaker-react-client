@@ -20,7 +20,6 @@ class Quizmaker extends Component {
     }
 
     nameChange = (e) => {
-        console.log("change", e.target.value)
         this.setState({quizName: e.target.value})
     }
   
