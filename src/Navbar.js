@@ -24,7 +24,6 @@ class Navbar extends Component {
     }
 
     render(){
-        console.log("in nav", this.props.userLogged)
         return(
             <div className={styles.NavbarFlex}>
                 { this.state.userLogged ?

@@ -45,7 +45,7 @@ class QuestionCard extends React.Component{
                 })
             })
             .then(resp => resp.json())
-            .then(data => this.setState({quizID: data.id }, () => console.log("this.state.quizID", this.state.quizID)))
+            .then(data => this.setState({quizID: data.id }))
         }) 
     }
 

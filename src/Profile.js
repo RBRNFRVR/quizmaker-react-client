@@ -75,7 +75,6 @@ class Profile extends Component{
 
     render(){
         let counter = 0
-        console.log("in profile after logged in. here is the user obj:", this.state.loggedInUser)
         return(
             <div>
                 <h1>My Profile</h1>
