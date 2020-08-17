@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import QuizQuestions from './QuizQuestions'
+import styles from './mystyle.module.css'
 
 class Profile extends Component{
 

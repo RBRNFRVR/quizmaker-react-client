@@ -29,7 +29,9 @@ class Quizmaker extends Component {
         
         return(
             <div className={styles.QuizmakerContainer}>
+                <div className={styles.PageTitle}>
                 <h1>Quizmaker Container</h1>
+                </div>
                 { this.state.nextClicked ? <h3>{this.state.quizName}</h3> :
                 <form onSubmit={this.createNewQuiz}>
                     <label>Quiz Name:</label>

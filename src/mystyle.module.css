@@ -32,6 +32,7 @@
       align-items: flex-start;
       display: flex;
       justify-content: space-between;
+      text-decoration-color: black;
   }
   .ProfileButton{
       padding: 10px 24px;
@@ -39,15 +40,20 @@
 
   .QuizApp{
       padding: 20px 100px;
-  }
-  .QuizmakerContainer{
+      /* background-image: url('pexels-eberhard-grossgasteiger-2310713.jpg'); */
       background-color: pink;
-      
-  }
+      background-attachment: fixed;    
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;   
+    }
+  .QuizmakerContainer{
+      background-color: null;
+    }
   .QuizmakerQuestionsDisplay{
-      background-color: red;
+      
       display:grid;
-      /* grid-template-columns: auto auto; */
+       grid-template-columns: auto auto; 
       grid-template-columns: repeat(2,618px);
       grid-template-rows: repeat(5,350px);
       grid-column-gap: 5px;
@@ -57,11 +63,31 @@
   .QuestionCard{
       
       border-style: solid;
+      background-color: white;
       border-color: black;
       border-width: 4px;
       padding: 25px;
+      font-family: sans-serif;
     
 }
 .Questions{
     background-color: white;
+}
+.buttonlink{
+    border-radius: 25px;
+    background-color: white;
+    border: 2px solid rebeccapurple;
+    padding: 2px;
+    transform: scale(1,1);
+}
+.buttonlink :hover{
+    border-radius: 25px;
+    background-color: red;
+    border: 2px solid rebeccapurple;
+    padding: 5px;
+    transform: scale(1,1);
+}
+
+.PageTitle{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

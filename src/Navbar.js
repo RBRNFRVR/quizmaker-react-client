@@ -1,19 +1,34 @@
 import React, { Component } from 'react'
 import styles from  './mystyle.module.css'
-import { Link, Switch} from "react-router-dom";
+import { Link, Switch, withRouter} from "react-router-dom";
 
 class Navbar extends Component {
+    state={
+        hover:false
+    }
     handleClick = (event) => {
         console.log('Loading Profile...')
     }
+    handleonMouseEnter =(event) => {
+       this.state.hover === true? this.setState({hover:false}):this.setState({hover:true})
+       
+    }
+
     render(){
         return(
             <div className={styles.NavbarFlex}>
-                
-                <Link to='/profile'>Profile</Link>
-                <Link to='/quizmaker' onClick={this.props.qmClicked}>Quizmaker</Link>
-                <Link to='/quiztaker'>Quiztaker</Link>
-                <Link to='/loginform'>Login</Link>
+                <div className={styles.buttonlink}>
+                <Link to='/profile' onMouseEnter={this.handleonMouseEnter}>Profile</Link>
+                </div>
+                <div className={styles.buttonlink}>
+                <Link to='/quizmaker' onClick={this.props.qmClicked} onMouseEnter={this.handleonMouseEnter}>Quizmaker</Link>
+                </div>
+                <div className={styles.buttonlink}>
+                <Link to='/quiztaker'onMouseEnter={this.handleonMouseEnter}>Quiztaker</Link>
+                </div>
+                <div className={styles.buttonlink}>
+                <Link to='/loginform'onMouseEnter={this.handleonMouseEnter}>Login</Link>
+                </div>
             </div>
         )
     }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styles from './mystyle.module.css'
 
 class LoginForm extends Component{
     handleClick = (event) =>{
@@ -9,6 +10,9 @@ class LoginForm extends Component{
     render(){ 
     return( 
         <div>
+            <div className={styles.PageTitle}>
+            <h1>Login</h1>
+            </div>
             <form>
                 <label for ="username">Username:</label><br/>
                 <input type ="text" id="username" name="username"/><br/>

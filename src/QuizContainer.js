@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import Quiz from './Quiz'
+import styles from './mystyle.module.css'
 
 class QuizContainer extends Component {
 render(){
     return(
         <div>
-        <Quiz />
+            <div className={styles.PageTitle}>
+            <h1>Quiztaker</h1>
+            </div>
+            <Quiz />
         </div>
     )
 }
