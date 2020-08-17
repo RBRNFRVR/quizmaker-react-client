@@ -1,10 +1,42 @@
 import React, { Component } from 'react'
 import styles from './mystyle.module.css'
+import { Redirect } from 'react-router-dom';
 
 class LoginForm extends Component{
-    handleClick = (event) =>{
-        event.preventDefault()
-        console.log('working')
+
+    state = {
+        usersArray: "",
+        unType: "",
+        pwType: "",
+        loginAlert: false,
+        redirect: false,
+        loggedInUser: ""
+    }
+
+    handleClick = (e) =>{
+        e.preventDefault()
+        let user = this.state.unType
+        let foundUser = this.state.usersArray.filter(obj => obj.username === user)[0]
+        if (foundUser && foundUser.password === this.state.pwType){
+            this.setState({ loggedInUser: foundUser })
+            this.setState({ redirect: true })
+            this.props.setLoggedInUser(foundUser)
+        } else {
+             this.setState({ loginAlert: true }) 
+        }
+    }
+
+    componentDidMount(){
+        fetch('http://localhost:3000/users')
+        .then(resp => resp.json())
+        .then(data => this.setState({usersArray: data}) )
+    }
+
+    unType = (e) => {
+        this.setState({unType: e.target.value})
+    }
+    pwType = (e) => {
+        this.setState({pwType: e.target.value}, () => console.log( this.state.pwType))
     }
     
     render(){ 
@@ -15,11 +47,13 @@ class LoginForm extends Component{
             </div>
             <form>
                 <label>Username:</label><br/>
-                <input type ="text" id="username" name="username"/><br/>
+                <input onChange={this.unType} value={this.state.unType} type ="text" id="username" name="username"/><br/>
                 <label>Password:</label><br/>
-                <input type="password" id="password" name="password"/><br/>
+                <input onChange={this.pwType} value={this.state.pwType} type="password" id="password" name="password"/><br/>
+                {!this.state.loginAlert ? null : <p>Incorrect username or password</p>}
                 <button onClick={this.handleClick} type="submit">Log In</button>
             </form>
+            {this.state.redirect ? <Redirect to='/profile'/> : null}
         </div>
     )
     }

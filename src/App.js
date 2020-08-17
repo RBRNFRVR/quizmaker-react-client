@@ -10,7 +10,10 @@ import LoginForm from './LoginForm';
 
 class App extends Component{
   state={
-    questions: ""
+    questions: "",
+    loggedInUser: "",
+    loggedInUsername: "",
+    userLogged: false
   }
 
 
@@ -26,20 +29,29 @@ class App extends Component{
     this.setState({questions: "" })
   }
 
- 
+  setLoggedInUser = (userObj) => {
+    console.log("logged in user:", userObj)
+    this.setState({loggedInUser: userObj})
+    this.setState({userLogged: userObj.username})
+    this.setState({loggedInUsername: userObj.username})
+  }
 
+  logOut = () => {
+    console.log("logged out")
+    this.setState({userLogged: false}, () => console.log("user logged state", this.state.userLogged))
+  }
 
   render(){
     return(
         <Router>
         <div className={styles.QuizApp}>
         <h1 className={styles.Appheader}>QuizMaker Project</h1>
-        <Navbar qmClicked={this.qmClicked}/>
+        <Navbar logOut={this.logOut} userLogged={this.state.userLogged} loggedInUser={this.state.loggedInUser} loggedInUsername={this.state.loggedInUsername} qmClicked={this.qmClicked}/>
         <Route exact path="/"><Redirect to="/login" /></Route>
         <Route exact path ='/quiztaker' component={QuizContainer} />
         <Route exact path = '/quizmaker' render={() => <QuizMaker questions={this.state.questions} getQuestions={this.getQuestions}/>} />
         <Route exact path='/profile' component={Profile}/>
-        <Route exact path='/login' component={LoginForm}/>
+        <Route exact path='/login' render={() => <LoginForm setLoggedInUser={this.setLoggedInUser}/> } />
         </div>
         </Router>
       
