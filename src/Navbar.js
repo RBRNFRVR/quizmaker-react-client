@@ -4,7 +4,10 @@ import { Link, Switch, withRouter} from "react-router-dom";
 
 class Navbar extends Component {
     state={
-        hover:false
+        hover:false,
+        loggedInUser: this.props.loggedInUser,
+        loggedInUsername: this.props.loggedInUsername,
+        userLogged: false
     }
     handleClick = (event) => {
         console.log('Loading Profile...')
@@ -14,23 +17,36 @@ class Navbar extends Component {
 
     }
 
+    componentDidUpdate(prevProps, prevState){
+        if (prevProps.userLogged !== this.props.userLogged){
+            this.setState({userLogged: !this.state.userLogged})
+        }
+    }
+
     render(){
         return(
             <div className={styles.NavbarFlex}>
-                <div className={styles.leftthree}>
-                <div className={styles.buttonlink}>
-                <Link to='/profile' onMouseEnter={this.handleonMouseEnter} className={styles.linkstyle}>Profile</Link>
-                </div>
-                <div className={styles.buttonlink}>
-                <Link to='/quizmaker' onClick={this.props.qmClicked} onMouseEnter={this.handleonMouseEnter} className={styles.linkstyle}>Quizmaker</Link>
-                </div>
-                <div className={styles.buttonlink}>
-                <Link to='/quiztaker'onMouseEnter={this.handleonMouseEnter} className={styles.linkstyle}>Quiztaker</Link>
-                </div>
-                </div>
-                <div className={styles.buttonlink}>
-                <Link to='/login'onMouseEnter={this.handleonMouseEnter} className={styles.loginlinkstyle}>Login</Link>
-                </div>
+                { this.state.userLogged ?
+                    <>
+                    <div className={styles.leftthree}>
+                        <div className={styles.buttonlink}>
+                        <Link to='/profile' onMouseEnter={this.handleonMouseEnter} className={styles.linkstyle}>Profile</Link>
+                        </div>
+                        <div className={styles.buttonlink}>
+                        <Link to='/quizmaker' onClick={this.props.qmClicked} onMouseEnter={this.handleonMouseEnter} className={styles.linkstyle}>Quizmaker</Link>
+                        </div>
+                        <div className={styles.buttonlink}>
+                        <Link to='/quiztaker' onMouseEnter={this.handleonMouseEnter} className={styles.linkstyle}>Quiztaker</Link>
+                        </div>
+                    </div>
+                    <div className={styles.buttonlink}>
+                    <Link to='/login' onClick={this.props.logOut} className={styles.loginlinkstyle} onMouseEnter={this.handleonMouseEnter}>Log Out</Link>
+                    </div>
+                    </>
+                :
+                null 
+                }
+                     
             </div>
         )
     }

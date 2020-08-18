@@ -7,7 +7,8 @@ class QuestionCard extends React.Component{
         quizName: this.props.quizName,
         buttonClicked: false,
         questionID: "",
-        quizID: ""
+        quizID: "",
+        loggedInUser: this.props.loggedInUser
     }
     
     addToQuiz = () => {
@@ -40,11 +41,11 @@ class QuestionCard extends React.Component{
                 body: JSON.stringify({
                     name: this.state.quizName,
                     question_id: data.id,
-                    user_id: 1
+                    user_id: this.state.loggedInUser.id
                 })
             })
             .then(resp => resp.json())
-            .then(data => this.setState({quizID: data.id }, () => console.log("this.state.quizID", this.state.quizID)))
+            .then(data => this.setState({quizID: data.id }))
         }) 
     }
 
@@ -80,7 +81,8 @@ class QuestionCard extends React.Component{
     decodeText = (string) => {
         let entities = {
             '&#039;': "'",
-            '&quot;': '"'
+            '&quot;': '"',
+            '&rsquo;': "'"
         }
         let stg1 = string.replace(/&#?\w+;/, match => entities[match]).replace(/&#?\w+;/, match => entities[match])
         let stg2 = stg1.replace(/&#?\w+;/, match => entities[match]).replace(/&#?\w+;/, match => entities[match])
@@ -107,7 +109,7 @@ class QuestionCard extends React.Component{
                 <p>Question: {this.decodeText(this.props.obj.question)}</p>
                 <p>Correct Answer: {this.decodeText(this.props.obj.correct_answer)}</p>
                 <p>Incorrect Answers: {this.decodeText(this.props.obj.incorrect_answers.join(", ")) }</p>
-                {this.state.buttonClicked ? <button onClick={this.removeFromQuiz}>Remove</button>:<button onClick={this.addToQuiz}>Add to Quiz</button>}
+                {this.state.buttonClicked ? <button onClick={this.removeFromQuiz} className={styles.removebutton}>Remove</button>:<button onClick={this.addToQuiz}className={styles.addbutton}>Add to Quiz</button>}
             </div>
         )
     }

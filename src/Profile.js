@@ -11,11 +11,12 @@ class Profile extends Component{
         filteredQuestions :"",
         quizName: "",
         quizClicked: false,
-        hideButton: true
+        hideButton: true,
+        loggedInUser: this.props.loggedInUser
     }
 
     componentDidMount(){
-        let newUrl = `http://localhost:3000/users/1`
+        let newUrl = `http://localhost:3000/users/${this.state.loggedInUser.id}`
     
         fetch(newUrl)
         .then(resp => resp.json())
@@ -57,7 +58,7 @@ class Profile extends Component{
             })
             .then(resp => resp.text())
             .then(data => {
-                let newUrl = `http://localhost:3000/users/1`
+                let newUrl = `http://localhost:3000/users/${this.state.loggedInUser.id}`
     
                 fetch(newUrl)
                 .then(resp => resp.json())
@@ -76,13 +77,12 @@ class Profile extends Component{
         let counter = 0
         return(
             <div>
-                <h1>My Profile</h1>
-                <h2>Username: {this.state.info.username}</h2>
-                <p>My Quizzes:</p>
-                    <ul>{(this.state.quizNames === "" ? null : this.state.quizNames.map(obj => <li onClick={() => this.clickedQuiz(obj)}>{obj}</li>))}</ul> 
+                <h2 className={styles.Quizname}>{this.state.info.username}</h2>
+                <p>My Quizzes</p>
+                    <ul className={styles.list}>{(this.state.quizNames === "" ? null : this.state.quizNames.map(obj => <li onClick={() => this.clickedQuiz(obj)}>{obj}</li>))}</ul> 
                 {/* <div className={styles.QuizmakerQuestionsDisplay}> */}
                 <div>
-                    { (!this.state.quizClicked ? <h4>Select a quiz from "My Quizzes" to view more details</h4> : <div> <h3>{this.state.quizName}</h3><button>Delete Quiz</button></div>)}  
+                    { (!this.state.quizClicked ? <h4>Select a quiz from "My Quizzes" to view more details</h4> : <div> <h3>{this.state.quizName}</h3><button onClick={this.deleteQuiz}>Delete Quiz</button></div>)}  
                     { (this.state.filteredQuestions === "" ? null : this.state.filteredQuestions.map(obj =>  {
                     counter += 1
                     return <QuizQuestions count={counter} obj={obj}/>;

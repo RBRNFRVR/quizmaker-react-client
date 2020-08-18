@@ -28,14 +28,11 @@ class Quizmaker extends Component {
         
         return(
             <div className={styles.QuizmakerContainer}>
-                <div className={styles.PageTitle}>
-                <h1>Quizmaker Container</h1>
-                </div>
-                { this.state.nextClicked ? <h3>{this.state.quizName}</h3> :
+                { this.state.nextClicked ? <h3 className={styles.Quizname}>{this.state.quizName}</h3> :
                 <form onSubmit={this.createNewQuiz}>
-                    <label>Quiz Name:</label>
-                    <input onChange={this.nameChange} type="text" placeholder="new quiz name..." value={this.state.quizName}></input>
-                    <input type="submit" value="Next"></input>
+                    <label className={styles.lables}>Quiz Name</label>
+                    <input onChange={this.nameChange} type="text" placeholder="new quiz name..." value={this.state.quizName} className={styles.quizmakertitle}></input>
+                    <input type="submit" value="Next" className={styles.loginbutton}></input>
                 </form>
                 }
                 
@@ -43,7 +40,7 @@ class Quizmaker extends Component {
                 <div className={styles.QuizmakerQuestionsDisplay}>
             { (this.props.questions === "" ? null : this.props.questions.map(obj => {
             counter += 1
-            return <QuestionCard count={counter} quizName={this.state.quizName} obj={obj}/>
+            return <QuestionCard loggedInUser={this.props.loggedInUser} count={counter} quizName={this.state.quizName} obj={obj}/>
             }) ) }
                 </div>
             </div>

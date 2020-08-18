@@ -65,6 +65,7 @@
   .QuestionCard{
       
       border-style: solid;
+      border-radius: 25px;
       background-color: white;
       border-color: black;
       border-width: 4px;
@@ -73,7 +74,13 @@
     
 }
 .Questions{
-    background-color: white;
+    border-style: solid;
+      border-radius: 25px;
+      background-color: white;
+      border-color: black;
+      border-width: 4px;
+      padding: 25px;
+      font-family: sans-serif;
 }
 .buttonlink{
     border: 25px;
@@ -126,21 +133,71 @@
     margin-top: 0%;
 }
 .loginformstyle{
+    margin-top: 5%;
+    border: 2px solid black;
+    border-radius: 25px;
     background-color: white;
+    padding:15px;
+    /* display: inline block; */
+    text-align: center;
+    width: 50%; 
+    margin-left: 25%;
 }
 input[type=text], select, text{
-    width: 50%;
+    width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 3px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
 }
 input[type=password], select, password{
-    width: 50%;
+    width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 3px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
+}
+.loginbutton{
+    background-color: white;
+}
+
+.loginbutton:hover{
+    background-color: purple;
+}
+.lables{
+    color: purple;
+    font-size: large;
+}
+.dropdownstyle{
+    position: relative;
+}
+/* .quizmakertitle{
+} */
+.Quizname{
+    color: purple;
+    text-transform: uppercase;
+    font-size: 55px;
+    font-family: "Times New Roman", Times
+}
+.addbutton{
+    background-color: white;
+}
+
+.addbutton:hover{
+    background-color: blueviolet;
+}
+
+.removebutton{
+    background-color: white;
+}
+.removebutton:hover{
+    background-color: red;
+}
+.list{
+    background-color: white;
+    cursor: pointer;
+    margin-right: 80%;
+    border-color: black;
 }
