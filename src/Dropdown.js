@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './mystyle.module.css'
+import './dropdown.css'
 
 class Dropdown extends React.Component{
 
@@ -30,8 +31,9 @@ class Dropdown extends React.Component{
             <form onSubmit={this.handleSubmit}>
                     <label>
                     <div className={styles.lables}>Pick a Category</div>
-                    <select className={styles.dropdownstyle} value={this.state.value} onChange={this.handleCategory}>
-                        <option value="9">General Knowledge</option>
+                    <div> 
+                    <select value={this.state.value} onChange={this.handleCategory}>
+                        <option style ={{backgroundColor:'red'}}value="9">General Knowledge</option>
                         <option value="27">Animals</option>
                         <option value="10">Books</option>
                         <option value="26">Celebrities</option>
@@ -42,8 +44,8 @@ class Dropdown extends React.Component{
                         <option value="17">Science / Nature</option>
                         <option value="21">Sports</option>
                     </select>
+                    </div>
                     </label>
-
                     <label>
                     <div className={styles.lables}>Pick Difficulty</div>
                     <select className={styles.dropdownstyle} value={this.state.value} onChange={this.handleDifficulty}>

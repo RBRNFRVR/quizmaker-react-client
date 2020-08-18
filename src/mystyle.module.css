@@ -81,6 +81,7 @@
       border-width: 4px;
       padding: 25px;
       font-family: sans-serif;
+      margin-bottom: 5px;
 }
 .buttonlink{
     border: 25px;
@@ -161,6 +162,10 @@ input[type=password], select, password{
 }
 .loginbutton{
     background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
 .loginbutton:hover{
@@ -171,7 +176,10 @@ input[type=password], select, password{
     font-size: large;
 }
 .dropdownstyle{
-    position: relative;
+   background-color: null;
+}
+select option{
+    background-color: red;
 }
 /* .quizmakertitle{
 } */
@@ -179,27 +187,44 @@ input[type=password], select, password{
     color: purple;
     text-transform: uppercase;
     font-size: 55px;
-    font-family: "Times New Roman", Times
 }
 .addbutton{
-    background-color: white;
+    background-color: rgba(92, 238, 92, 0.801);
 }
 
-.addbutton:hover{
-    background-color: blueviolet;
-}
+/* .addbutton:hover{
+    background-color: orange;
+} */
 
 .removebutton{
-    background-color: white;
+    background-color: rgba(255, 0, 0, 0.555);
 }
-.removebutton:hover{
+/* .removebutton:hover{
     background-color: red;
-}
-.list{
+} */
+/* .list{
     background-color: white;
     cursor: pointer;
     margin-right: 80%;
     border-style: solid;
     border-color: black;
     border-radius: 25px;
+} */
+.mainquizzes{
+    background-color: white;
+    cursor: pointer;
+    margin-right: 80%;
+    border-style: solid;
+    border-color: black;
+    border-radius: 25px;
+    padding: 5px;
+    margin-bottom: 1px;
+}
+.removequizbutton{
+    background-color: white;
+    margin-bottom: 5px;
+}
+.removequizbutton:hover{
+    background-color: rgba(255, 0, 0, 0.555);
+    margin-bottom: 5px;
 }
