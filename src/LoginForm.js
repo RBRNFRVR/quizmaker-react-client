@@ -58,11 +58,7 @@ class LoginForm extends Component{
                 {!this.state.loginAlert ? null : <p>Incorrect username or password</p>}
                 <br/>
                 <button onClick={this.handleClick} type="submit" className={styles.loginbutton}>Log In</button>
-                <button onClick={this.handleClick} type="submit">Log In</button>
-                <div>
-                <button className={styles.signUp} onClick={this.registerUser} type="submit">Sign Up</button>
-
-                </div>
+                <button className={styles.loginbutton} onClick={this.registerUser} type="submit">Sign Up</button>
             </form>
             {this.state.redirect ? <Redirect to='/profile'/> : null}
         </div>
