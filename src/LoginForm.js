@@ -38,6 +38,10 @@ class LoginForm extends Component{
     pwType = (e) => {
         this.setState({pwType: e.target.value})
     }
+
+    registerUser = () => {
+        console.log("register user")
+    }
     
     render(){ 
     return( 
@@ -52,6 +56,10 @@ class LoginForm extends Component{
                 <input onChange={this.pwType} value={this.state.pwType} type="password" id="password" name="password"/><br/>
                 {!this.state.loginAlert ? null : <p>Incorrect username or password</p>}
                 <button onClick={this.handleClick} type="submit">Log In</button>
+                <div>
+                <button className={styles.signUp} onClick={this.registerUser} type="submit">Sign Up</button>
+
+                </div>
             </form>
             {this.state.redirect ? <Redirect to='/profile'/> : null}
         </div>
