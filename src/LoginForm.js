@@ -61,6 +61,7 @@ class LoginForm extends Component{
                 <button onClick={this.handleClick} type="submit" className={styles.loginbutton}>Log In</button>
                 <button className={styles.loginbutton} onClick={this.registerUser} type="submit">Sign Up</button>
             </form>
+            
             {this.state.redirect ? <Redirect to='/profile'/> : null}
         </div>
     )

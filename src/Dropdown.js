@@ -54,7 +54,7 @@ class Dropdown extends React.Component{
                         <option value="hard">Hard</option>
                     </select>
                     </label>
-                    <input type="submit" value="Submit"  className={styles.loginbutton}/>
+                    <input type="submit" value="Search"  className={styles.loginbutton}/>
                 </form>
         )
     }

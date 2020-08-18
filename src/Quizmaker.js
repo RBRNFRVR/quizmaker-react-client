@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import QuestionCard from './QuestionCard'
 import Dropdown from './Dropdown'
 import styles from './mystyle.module.css'
+import {withRouter} from 'react-router-dom';
+
 
 class Quizmaker extends Component {
 
@@ -22,6 +24,11 @@ class Quizmaker extends Component {
     nameChange = (e) => {
         this.setState({quizName: e.target.value})
     }
+
+    redirect = () => {
+        console.log("redirect!")
+        return this.props.history.push('/profile')
+    }
   
     render(){
         let counter = 0
@@ -41,10 +48,12 @@ class Quizmaker extends Component {
             { (this.props.questions === "" ? null : this.props.questions.map(obj => {
             counter += 1
             return <QuestionCard loggedInUser={this.props.loggedInUser} count={counter} quizName={this.state.quizName} obj={obj}/>
-            }) ) }
+                })
+            ) }
                 </div>
+                {this.props.questions === "" ? null :<button onClick={this.redirect} className={styles.doneBtn}>SUBMIT QUIZ</button>}
             </div>
         )
     }
 }
-export default Quizmaker
+export default withRouter(Quizmaker)
