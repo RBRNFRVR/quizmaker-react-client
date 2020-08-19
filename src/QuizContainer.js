@@ -7,7 +7,7 @@ render(){
     return(
         <div>
             <div className={styles.PageTitle}>
-            <h1>Quiztaker</h1>
+            <h1>Choose a Quiz!!</h1>
             </div>
             <Quiz />
         </div>
