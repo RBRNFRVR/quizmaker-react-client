@@ -72,6 +72,10 @@ class Profile extends Component{
 
         })
     }
+
+    noQuizzes = () => {
+        return (<p>You have no quizzes saved. To create a quiz, navigate to Quizmaker.</p>)
+    }
     
 
     render(){
@@ -81,7 +85,7 @@ class Profile extends Component{
                 <h2 className={styles.Quizname}>Welcome, {this.state.info.username}!</h2>
                 <h2>My Quizzes</h2>
                     <div className={styles.list}>{(this.state.quizNames === "" ? null : this.state.quizNames.map(obj => <div className={styles.mainquizzes} onClick={() => this.clickedQuiz(obj)}>{obj}</div>))}</div> 
-                {/* <div className={styles.QuizmakerQuestionsDisplay}> */}
+               
                 <div>
                     { (!this.state.quizClicked ? <h4>Select a quiz from "My Quizzes" to view more details</h4> : <div> <h3 className={styles.quizTitle}>{this.state.quizName}</h3><hr className={styles.divider}></hr><button onClick={this.deleteQuiz} className={styles.removequizbutton}>Delete Quiz</button></div>)}  
                     { (this.state.filteredQuestions === "" ? null : this.state.filteredQuestions.map(obj =>  {
@@ -95,3 +99,5 @@ class Profile extends Component{
     }
 }
 export default Profile
+
+
