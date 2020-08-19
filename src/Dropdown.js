@@ -30,9 +30,9 @@ class Dropdown extends React.Component{
         return(
             <form onSubmit={this.handleSubmit}>
                     <label>
-                    <div className={styles.lables}>Pick a Category</div>
+                    <div className={styles.qmLables}>Pick a Category</div>
                     <div> 
-                    <select value={this.state.value} onChange={this.handleCategory}>
+                    <select value={this.state.value} onChange={this.handleCategory} className={styles.dropDowns}>
                         <option style ={{backgroundColor:'red'}}value="9">General Knowledge</option>
                         <option value="27">Animals</option>
                         <option value="10">Books</option>
@@ -47,8 +47,8 @@ class Dropdown extends React.Component{
                     </div>
                     </label>
                     <label>
-                    <div className={styles.lables}>Pick Difficulty</div>
-                    <select className={styles.dropdownstyle} value={this.state.value} onChange={this.handleDifficulty}>
+                    <div className={styles.qmLables}>Pick Difficulty</div>
+                    <select className={styles.dropdownstyle} value={this.state.value} onChange={this.handleDifficulty} className={styles.dropDowns}>
                         <option value="easy">Easy</option>
                         <option value="medium">Medium</option>
                         <option value="hard">Hard</option>

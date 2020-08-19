@@ -56,10 +56,8 @@ class LoginForm extends Component{
                 <br/>
                 <label className={styles.lables}>Password</label><br/>
                 <input onChange={this.pwType} value={this.state.pwType} type="password" id="password" name="password" placeholder="e.g.Pass12356$"/><br/>
-                {!this.state.loginAlert ? null : <p>Incorrect username or password</p>}
                 <br/>
-                <button onClick={this.handleClick} type="submit" className={styles.loginbutton}>Log In</button>
-                <button className={styles.registerbutton} onClick={this.registerUser} type="submit">Sign Up</button>
+                <button onClick={this.handleClick} type="submit" className={styles.loginbutton}>Create Account</button>
             </form>
             
             {this.state.redirect ? <Redirect to='/profile'/> : null}

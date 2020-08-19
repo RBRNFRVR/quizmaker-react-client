@@ -104,11 +104,11 @@ class QuestionCard extends React.Component{
         return(
             <div className={styles.QuestionCard}>
                 <h3>Question #{this.props.count}</h3>
-                <p>Category: {this.props.obj.category}</p>
-                <p>Difficulty: {this.capitalize(level)}</p>
-                <p>Question: {this.decodeText(this.props.obj.question)}</p>
-                <p>Correct Answer: {this.decodeText(this.props.obj.correct_answer)}</p>
-                <p>Incorrect Answers: {this.decodeText(this.props.obj.incorrect_answers.join(", ")) }</p>
+                <p><b>Category:</b> {this.props.obj.category}</p>
+                <p><b>Difficulty:</b> {this.capitalize(level)}</p>
+                <p><b>Question:</b> {this.decodeText(this.props.obj.question)}</p>
+                <p><b>Correct Answer:</b> {this.decodeText(this.props.obj.correct_answer)}</p>
+                <p><b>Incorrect Answers:</b> {this.decodeText(this.props.obj.incorrect_answers.join(", ")) }</p>
                 {this.state.buttonClicked ? <button onClick={this.removeFromQuiz} className={styles.removebutton}>Remove</button>:<button onClick={this.addToQuiz}className={styles.addbutton}>Add to Quiz</button>}
             </div>
         )

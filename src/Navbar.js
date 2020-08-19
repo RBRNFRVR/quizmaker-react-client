@@ -35,9 +35,9 @@ class Navbar extends Component {
                         <div className={styles.buttonlink}>
                         <Link to='/quizmaker' onClick={this.props.qmClicked} onMouseEnter={this.handleonMouseEnter} className={styles.linkstyle}>Quizmaker</Link>
                         </div>
-                        <div className={styles.buttonlink}>
+                        {/* <div className={styles.buttonlink}>
                         <Link to='/quiztaker' onMouseEnter={this.handleonMouseEnter} className={styles.linkstyle}>Quiztaker</Link>
-                        </div>
+                        </div> */}
                     </div>
                     <div className={styles.buttonlink}>
                     <Link to='/login' onClick={this.props.logOut} className={styles.loginlinkstyle} onMouseEnter={this.handleonMouseEnter}>Log Out</Link>
