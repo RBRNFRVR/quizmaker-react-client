@@ -38,8 +38,7 @@ class App extends Component{
   }
 
   logOut = () => {
-    console.log("logged out")
-    this.setState({userLogged: false}, () => console.log("user logged state", this.state.userLogged))
+    this.setState({userLogged: false})
   }
 
   render(){

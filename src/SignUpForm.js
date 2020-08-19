@@ -13,13 +13,7 @@ class LoginForm extends Component{
         loggedInUser: ""
     }
 
-   
 
-    // componentDidMount(){
-    //     fetch('http://localhost:3000/users')
-    //     .then(resp => resp.json())
-    //     .then(data => this.setState({usersArray: data}) )
-    // }
 
     unType = (e) => {
         this.setState({unType: e.target.value})
@@ -30,7 +24,6 @@ class LoginForm extends Component{
 
     registerUser = (e) => {
         e.preventDefault()
-        console.log("register user", this.state.unType, this.state.pwType)
         fetch("http://localhost:3000/users",{
             method: "POST",
             headers: {
@@ -43,8 +36,9 @@ class LoginForm extends Component{
             })
         })
         .then(resp => resp.json())
-        .then(data => {
-            this.setState({loggedInUser: data})
+        .then(data => { 
+            let user = {id: data.id, username: data.username}
+            this.setState({loggedInUser: user})
             this.props.setLoggedInUser(this.state.loggedInUser)
             this.setState({ redirect: true })
         })
@@ -55,7 +49,7 @@ class LoginForm extends Component{
         <div>
             <div className={styles.PageTitle}>
             </div>
-            <form onClick={this.registerUser} className={styles.loginformstyle}>
+            <form onSubmit={this.registerUser} className={styles.loginformstyle}>
                  <h1>Register New User</h1>
                 <label className={styles.lables}>Username</label><br/>
                 <input onChange={this.unType} value={this.state.unType} type ="text" id="username" name="username" placeholder="e.g.RBRNFRVR"/><br/>
@@ -66,7 +60,7 @@ class LoginForm extends Component{
                 <button type="submit" className={styles.createAccount}>Create Account</button>
             </form>
             
-            {/* {!this.state.redirect ? <Redirect to='/profile'/> : null} */}
+            {this.state.redirect ? <Redirect to='/profile'/> : null}
         </div>
     )
     }
