@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './mystyle.module.css'
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 class LoginForm extends Component{
 
@@ -59,7 +59,8 @@ class LoginForm extends Component{
                 {!this.state.loginAlert ? null : <p>Incorrect username or password</p>}
                 <br/>
                 <button onClick={this.handleClick} type="submit" className={styles.loginbutton}>Log In</button>
-                <button className={styles.registerbutton} onClick={this.registerUser} type="submit">Sign Up</button>
+                <Link to='/register' className={styles.registerbutton}>Sign Up</Link>
+                
             </form>
             
             {this.state.redirect ? <Redirect to='/profile'/> : null}
@@ -69,3 +70,5 @@ class LoginForm extends Component{
 }
 
 export default LoginForm
+
+{/* <Link to='/sign-up' className={styles.registerbutton} onClick={this.registerUser} type="submit">Sign Up</Link> */}

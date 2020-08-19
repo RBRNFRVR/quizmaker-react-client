@@ -6,6 +6,7 @@ import QuizMaker from './Quizmaker'
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Profile from './Profile';
 import LoginForm from './LoginForm';
+import SignUpForm from './SignUpForm';
 import QuizImage from './QuizImage'
 
 
@@ -53,6 +54,7 @@ class App extends Component{
         <Route exact path = '/quizmaker' render={() => <QuizMaker loggedInUser={this.state.loggedInUser} questions={this.state.questions} getQuestions={this.getQuestions}/>} />
         <Route exact path='/profile' render={() => <Profile loggedInUser={this.state.loggedInUser}/>}/>
         <Route exact path='/login' render={() => <LoginForm setLoggedInUser={this.setLoggedInUser}/> } />
+        <Route exact path='/register' render={() => <SignUpForm setLoggedInUser={this.setLoggedInUser}/> } />
         </div>
         </Router>
       

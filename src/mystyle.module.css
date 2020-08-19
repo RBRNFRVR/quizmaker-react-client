@@ -181,12 +181,31 @@ input[type=password], select, password{
     background-color: rgba(168, 97, 196, 0.733);
 
 }
+.createAccount{
+    border-radius: 12px; /*Alex added*/
+    color: black; /*Alex added*/
+    padding: 15px 20px;/*Alex added*/
+    text-align: center;/*Alex added*/
+    text-decoration: none;/*Alex added*/
+    display: inline-block;/*Alex added*/
+    font-size: 16px;/*Alex added*/
+    margin-top: 30px;/*Alex added*/
+    margin-bottom: 30px;
+    width: 35%;/*Alex added*/
+    transition-duration: 0.2s; /*Alex added*/
+    background-color: rgba(168, 97, 196, 0.733);
+
+}
 
 .quizForm{
     margin-top: 30px;
 }
 
 .loginbutton:hover{
+    background-color: rgba(128, 0, 128, 0.87);
+    color: white /*Alex added*/
+}
+.createAccount:hover{
     background-color: rgba(128, 0, 128, 0.87);
     color: white /*Alex added*/
 }
@@ -357,7 +376,7 @@ select option{
     display: inline-block;/*Alex added*/
     font-size: 18px;/*Alex added*/
     margin-bottom: 30px;
-    margin-left: 40%;
+    margin-left: 39%;
     width: 20%;/*Alex added*/
     transition-duration: 0.2s; /*Alex added*/
     background-color: white;

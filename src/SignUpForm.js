@@ -50,14 +50,14 @@ class LoginForm extends Component{
             <div className={styles.PageTitle}>
             </div>
             <form className={styles.loginformstyle}>
-                 <h1>Login</h1>
+                 <h1>Register New User</h1>
                 <label className={styles.lables}>Username</label><br/>
                 <input onChange={this.unType} value={this.state.unType} type ="text" id="username" name="username" placeholder="e.g.RBRNFRVR"/><br/>
                 <br/>
                 <label className={styles.lables}>Password</label><br/>
                 <input onChange={this.pwType} value={this.state.pwType} type="password" id="password" name="password" placeholder="e.g.Pass12356$"/><br/>
                 <br/>
-                <button onClick={this.handleClick} type="submit" className={styles.loginbutton}>Create Account</button>
+                <button onClick={this.handleClick} type="submit" className={styles.createAccount}>Create Account</button>
             </form>
             
             {this.state.redirect ? <Redirect to='/profile'/> : null}
