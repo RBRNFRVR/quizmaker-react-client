@@ -5,6 +5,7 @@ function Quiz() {
   return(
      <div className={styles.PageTitle}>
          <h1>Within Quiz Container</h1>
+         
     </div>
     )
     
