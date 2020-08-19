@@ -31,11 +31,11 @@ class QuizQuestions extends React.Component {
         return(
             <div className={styles.Questions}>
                 <h3>Question #{this.props.count}</h3>
-                <p>Category: {this.props.obj.category}</p>
-                <p>Difficulty: {this.capitalize(level)}</p>
-                <p>Question: {this.decodeText(this.props.obj.question)}</p>
-                <p>Correct Answer: {this.props.obj.correct_answer}</p>
-                <p>Incorrect Answers: {this.props.obj.incorrect_answers}</p>
+                <p><b>Category: </b>{this.props.obj.category}</p>
+                <p><b>Difficulty:</b> {this.capitalize(level)}</p>
+                <p><b>Question: </b>{this.decodeText(this.props.obj.question)}</p>
+                <p><b>Correct Answer:</b> {this.props.obj.correct_answer}</p>
+                <p><b>Incorrect Answers:</b> {this.props.obj.incorrect_answers}</p>
             </div>
         )
     }

@@ -66,7 +66,7 @@
       
       border-style: solid;
       border-radius: 25px;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.609);
       border-color: black;
       border-width: 4px;
       padding: 25px;
@@ -76,7 +76,7 @@
 .Questions{
     border-style: solid;
       border-radius: 25px;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.609);
       border-color: black;
       border-width: 4px;
       padding: 25px;
@@ -97,7 +97,8 @@
     border: 2px solid rebeccapurple; */
     /* padding: 5px;*/
     background-color: purple;
-    cursor: pointer
+    cursor: pointer;
+   
 }
 
 .PageTitle{
@@ -137,7 +138,7 @@
     margin-top: 5%;
     border: 2px solid black;
     border-radius: 25px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.685);
     padding:15px;
     /* display: inline block; */
     text-align: center;
@@ -161,19 +162,60 @@ input[type=password], select, password{
     resize: vertical;
 }
 .loginbutton{
-    background-color: white;
+    /* background-color: white;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 1px;
-    margin-right: 1px;
+    margin-right: 1px; */
+    border-radius: 12px; /*Alex added*/
+    color: black; /*Alex added*/
+    padding: 15px 20px;/*Alex added*/
+    text-align: center;/*Alex added*/
+    text-decoration: none;/*Alex added*/
+    display: inline-block;/*Alex added*/
+    font-size: 16px;/*Alex added*/
+    margin-top: 30px;/*Alex added*/
+    margin-bottom: 30px;
+    width: 15%;/*Alex added*/
+    transition-duration: 0.2s; /*Alex added*/
+    background-color: rgba(168, 97, 196, 0.733);
+
+}
+.createAccount{
+    border-radius: 12px; /*Alex added*/
+    color: black; /*Alex added*/
+    padding: 15px 20px;/*Alex added*/
+    text-align: center;/*Alex added*/
+    text-decoration: none;/*Alex added*/
+    display: inline-block;/*Alex added*/
+    font-size: 16px;/*Alex added*/
+    margin-top: 30px;/*Alex added*/
+    margin-bottom: 30px;
+    width: 35%;/*Alex added*/
+    transition-duration: 0.2s; /*Alex added*/
+    background-color: rgba(168, 97, 196, 0.733);
+
+}
+
+.quizForm{
+    margin-top: 30px;
 }
 
 .loginbutton:hover{
-    background-color: purple;
+    background-color: rgba(128, 0, 128, 0.87);
+    color: white /*Alex added*/
+}
+.createAccount:hover{
+    background-color: rgba(128, 0, 128, 0.87);
+    color: white /*Alex added*/
 }
 .lables{
     color: purple;
-    font-size: large;
+    font-size: 25px;
+}
+.qmLables{
+    color: black;
+    font-size: 25px;
 }
 .dropdownstyle{
    background-color: null;
@@ -187,9 +229,22 @@ select option{
     color: purple;
     text-transform: uppercase;
     font-size: 55px;
+   
 }
 .addbutton{
     background-color: rgba(92, 238, 92, 0.801);
+
+    border-radius: 9px; /*Alex added*/
+    color: black; /*Alex added*/
+    padding: 10px 10px;/*Alex added*/
+    text-align: center;/*Alex added*/
+    text-decoration: none;/*Alex added*/
+    display: inline-block;/*Alex added*/
+    font-size: 14px;/*Alex added*/
+    margin-bottom: 10px;
+    border-color: black;
+    width: 20%;/*Alex added*/
+    transition-duration: 0.2s; /*Alex added*/
 }
 
 /* .addbutton:hover{
@@ -198,6 +253,20 @@ select option{
 
 .removebutton{
     background-color: rgba(255, 0, 0, 0.555);
+
+    border-radius: 9px; /*Alex added*/
+    color: black; /*Alex added*/
+    padding: 10px 10px;/*Alex added*/
+    text-align: center;/*Alex added*/
+    text-decoration: none;/*Alex added*/
+    display: inline-block;/*Alex added*/
+    font-size: 14px;/*Alex added*/
+    margin-bottom: 10px;
+    border-color: black;
+    width: 20%;/*Alex added*/
+    transition-duration: 0.2s; /*Alex added*/
+
+    
 }
 /* .removebutton:hover{
     background-color: red;
@@ -211,20 +280,123 @@ select option{
     border-radius: 25px;
 } */
 .mainquizzes{
-    background-color: white;
+    /* background-color: white;
     cursor: pointer;
     margin-right: 80%;
     border-style: solid;
     border-color: black;
-    border-radius: 25px;
+    border-radius: 8px;
     padding: 5px;
-    margin-bottom: 1px;
+    margin-bottom: 1px; */
+
+    border-radius: 12px; /*Alex added*/
+    color: black; /*Alex added*/
+    padding: 10px 10px;/*Alex added*/
+    text-align: left;/*Alex added*/
+    text-decoration: none;/*Alex added*/
+    display: inline-block;/*Alex added*/
+    font-size: 16px;/*Alex added*/
+    margin-bottom: 10px;
+    border-color: black;
+    width: 26%;/*Alex added*/
+    transition-duration: 0.2s; /*Alex added*/
+    background-color: white;
+    display: block;
+}
+
+.dropDowns{
+    margin-top: 5px;
+    margin-bottom: 12px;
+}
+
+.mainquizzes:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgb(28, 54, 128);
+    color: white;
+}
+
+.clickedBtn{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgb(28, 54, 128);
+    color: white;
 }
 .removequizbutton{
-    background-color: white;
-    margin-bottom: 5px;
+    /* background-color: white;
+    margin-bottom: 5px; */
+
+    border-radius: 12px; /*Alex added*/
+    color: black; /*Alex added*/
+    padding: 10px 10px;/*Alex added*/
+    text-align: center;/*Alex added*/
+    text-decoration: none;/*Alex added*/
+    display: inline-block;/*Alex added*/
+    font-size: 18px;/*Alex added*/
+    margin-bottom: 30px;
+    margin-left: 40%;
+    width: 20%;/*Alex added*/
+    transition-duration: 0.2s; /*Alex added*/
+    /* background-color: rgb(226, 97, 97); */
+    background-color: rgba(196, 236, 17, 0.849);
+    display: block;
 }
+
 .removequizbutton:hover{
-    background-color: rgba(255, 0, 0, 0.555);
-    margin-bottom: 5px;
+    background-color: rgba(245, 55, 55, 0.89);
+    color: white;
+    /* margin-bottom: 5px; */
 }
+
+.doneBtn {
+    background-color: rgba(196, 236, 17, 0.849);
+    border: none;
+    border-radius: 12px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 25%;
+    width: 50%;
+    transition-duration: 0.2s;
+  }
+
+  .doneBtn:hover {
+    background-color: #4CAF50; 
+    color: white;
+  }
+
+  .registerbutton{
+    border-radius: 12px; /*Alex added*/
+    color: black; /*Alex added*/
+    padding: 10px 10px;/*Alex added*/
+    text-align: center;/*Alex added*/
+    text-decoration: none;/*Alex added*/
+    display: inline-block;/*Alex added*/
+    font-size: 18px;/*Alex added*/
+    margin-bottom: 30px;
+    margin-left: 39%;
+    width: 20%;/*Alex added*/
+    transition-duration: 0.2s; /*Alex added*/
+    background-color: white;
+    display: block;
+  }
+
+  .registerbutton:hover{
+    background-color: rgb(59, 102, 182); 
+    color: white;
+  }
+
+  .quizTitle{
+    text-align: center;/*Alex added*/
+    font-size: 35px;/*Alex added*/
+    margin-bottom: 10px;
+  }
+
+  .divider{
+    margin-bottom: 20px;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 5px;
+  }

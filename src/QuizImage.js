@@ -7,7 +7,7 @@ class QuizImage extends Component{
     render(){
         return(
             <div className={styles.Image}>
-                <img src={image}></img>
+                <img src={image} alt="Quiz maker"></img>
             </div>
         )
     }
