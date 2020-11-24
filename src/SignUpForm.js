@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './mystyle.module.css'
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 class LoginForm extends Component{
 
@@ -58,6 +58,7 @@ class LoginForm extends Component{
                 <input onChange={this.pwType} value={this.state.pwType} type="password" id="password" name="password" placeholder="e.g.Pass12356$"/><br/>
                 <br/>
                 <button type="submit" className={styles.createAccount}>Create Account</button>
+                <Link to='/login' className={styles.registerbutton}>Login</Link>
             </form>
             
             {this.state.redirect ? <Redirect to='/profile'/> : null}
