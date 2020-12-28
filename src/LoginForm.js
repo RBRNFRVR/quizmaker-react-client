@@ -38,11 +38,6 @@ class LoginForm extends Component{
     pwType = (e) => {
         this.setState({pwType: e.target.value})
     }
-
-    // registerUser = (e) => {
-    //     e.preventDefault()
-    //     console.log("register user")
-    // }
     
     render(){ 
     return( 
