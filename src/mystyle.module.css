@@ -297,6 +297,7 @@ select option{
     background-color: rgb(28, 54, 128);
     color: white;
 }
+
 .removequizbutton{
     border-radius: 12px; 
     color: black; 
@@ -332,14 +333,14 @@ select option{
     margin-left: 25%;
     width: 50%;
     transition-duration: 0.2s;
-  }
+}
 
-  .doneBtn:hover {
+.doneBtn:hover {
     background-color: #4CAF50; 
     color: white;
-  }
+}
 
-  .registerbutton{
+.registerbutton{
     border-radius: 12px; 
     color: black; 
     padding: 10px 10px;
@@ -353,22 +354,22 @@ select option{
     transition-duration: 0.2s; 
     background-color: white;
     display: block;
-  }
+}
 
-  .registerbutton:hover{
+.registerbutton:hover{
     background-color: rgb(59, 102, 182); 
     color: white;
-  }
+}
 
-  .quizTitle{
+.quizTitle{
     text-align: center;
     font-size: 35px;
     margin-bottom: 10px;
-  }
+}
 
-  .divider{
+.divider{
     margin-bottom: 20px;
     width: 50%;
     border: 1px solid black;
     border-radius: 5px;
-  }
+}
