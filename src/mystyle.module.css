@@ -51,30 +51,26 @@
 }
 
 .QuizmakerContainer{
-      background-color: null;
+    background-color: null;
 }
 
-.QuizmakerQuestionsDisplay{
-      
-      display:grid;
-       grid-template-columns: auto auto; 
-      grid-template-columns: repeat(2,618px);
-      grid-template-rows: repeat(5,350px);
-      grid-column-gap: 5px;
-        grid-row-gap: 5px;
-
+.QuizmakerQuestionsDisplay{ 
+    display:grid;
+    grid-template-columns: auto auto; 
+    grid-template-columns: repeat(2,618px);
+    grid-template-rows: repeat(5,350px);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
 }
 
-  .QuestionCard{
-      
-      border-style: solid;
-      border-radius: 25px;
-      background-color: rgba(255, 255, 255, 0.609);
-      border-color: black;
-      border-width: 4px;
-      padding: 25px;
-      font-family: sans-serif;
-    
+.QuestionCard{
+    border-style: solid;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.609);
+    border-color: black;
+    border-width: 4px;
+    padding: 25px;
+    font-family: sans-serif;
 }
 
 .Questions{
@@ -163,7 +159,6 @@ input[type=password], select, password{
 }
 
 .loginbutton{
-
     border-radius: 12px; 
     color: black; 
     padding: 15px 20px;
@@ -192,7 +187,6 @@ input[type=password], select, password{
     width: 35%;
     transition-duration: 0.2s; 
     background-color: rgba(168, 97, 196, 0.733);
-
 }
 
 .quizForm{
@@ -231,8 +225,8 @@ select option{
     color: purple;
     text-transform: uppercase;
     font-size: 55px;
-   
 }
+
 .addbutton{
     background-color: rgba(92, 238, 92, 0.801);
     border-radius: 9px; 
@@ -261,8 +255,6 @@ select option{
     border-color: black;
     width: 20%;
     transition-duration: 0.2s; 
-
-    
 }
 
 .mainquizzes{
